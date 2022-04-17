@@ -14,7 +14,7 @@ const Header = () => {
     } 
     return (
         <div>
-               <Navbar collapseOnSelect expand="lg" sticky='top' bg="success" variant="dark">
+               <Navbar collapseOnSelect expand="lg"  fixed='top' bg="success" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                     <img height={32} className='rounded' src={`https://imgs.search.brave.com/yiPOkjkxcgPV2yca7eK-MdHeorsFULuFyHoWFpYK4WE/rs:fit:626:626:1/g:ce/aHR0cHM6Ly9pbWFn/ZS5mcmVlcGlrLmNv/bS9mcmVlLXZlY3Rv/ci9kb2N0b3ItaWNv/bi1hdmF0YXItd2hp/dGVfMTM2MTYyLTU4/LmpwZw`} alt="" />
@@ -27,16 +27,16 @@ const Header = () => {
                            
                         </Nav>
                         <Nav>
-                        <Nav.Link href="home">Home</Nav.Link>
-                            <Nav.Link as={Link}  to="about">About</Nav.Link>
-                            <Nav.Link as={Link} to="Blogs">
+                        <Nav.Link className="fw-bolder hover:text-white" href="home">Home</Nav.Link>
+                            <Nav.Link className="fw-bolder hover:text-white" as={Link}  to="about">About</Nav.Link>
+                            <Nav.Link className="fw-bolder hover:text-white" as={Link} to="Blogs">
                                 Blogs
                             </Nav.Link>
                             {
                                  user ?
                                     <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>
                                 : 
-                                <Nav.Link as={Link} to="login">
+                                <Nav.Link className="fw-bolder hover:text-white" as={Link} to="login">
                                 Login
                             </Nav.Link>}
                         </Nav>

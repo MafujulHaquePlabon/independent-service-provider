@@ -8,6 +8,7 @@ import About from './About/About';
 import Login from './Login/Login';
 import Footer from './Shared/Footer/Footer';
 import SignUp from './SignUp/SignUp';
+import Notfound from './NotFound/Notfound';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/About" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<Notfound></Notfound>}></Route>
         
       </Routes>
       <Footer></Footer>

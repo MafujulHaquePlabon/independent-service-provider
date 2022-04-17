@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { Navigate, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import "./SignUp.css"
+import SocialLogin from './SocialLogin/SocialLogin';
 
 const SignUp = () => {
 
@@ -26,6 +27,7 @@ const SignUp = () => {
     }
     if(user){
         navigate("/Home");
+        
     }
     const handleCreateUser=event=>{
       event.preventDefault();
@@ -44,8 +46,8 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className='register-form'>
-            <h2 style={{ textAlign: 'center' }}>Please Register</h2>
+            <div style={{marginTop:"100px"}} className='register-form'>
+            <h2 className="text-primary" style={{ textAlign: 'center' }}>Please Register</h2>
             <form onSubmit={handleCreateUser}>
 
                 <input onBlur={ handleEmailBlur} type="email" name="email" id="" placeholder='Email Address' required />
@@ -60,12 +62,12 @@ const SignUp = () => {
               {/*   <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor="terms">Accept Doctor Health_Sheba Terms and Conditions</label> */}
                 <input
                    /*   disabled={!agree}  */
-                    className='w-50 mx-auto btn btn-primary mt-2'
+                    className='w-50 mx-auto btn btn-info fw-bolder mt-2'
                     type="submit"
                     value="SignUp" />
             </form>
             <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none'/*  onClick={navigateLogin} */>Please Login</Link> </p>
-           {/*  <SocialLogig></SocialLogig> */}
+           <SocialLogin></SocialLogin>
         </div>
         </div>
     );

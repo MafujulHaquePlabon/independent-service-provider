@@ -1,104 +1,29 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+import google from "./googleIcone.png"
 
 const SocialLogin = () => {
-    
-   /*  const [agree, setAgree] = useState(false); */
-   const [
-    createUserWithEmailAndPassword,
-    user,
-    loading,
-    error,
-] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
-/*  const [updateProfile, updating, updateError] = useUpdateProfile(auth); */
-
-const navigate = useNavigate();
-
-const navigateLogin = () => {
-    navigate('/login');
-}
-/* 
- if(loading || updating){
-    return <loading></loading>
-}  */
-
-/*  if (user) {
- console.log('user', user);  
-}
-*/
- const handleSignOut = /* async  */(event) => {
-    event.preventDefault(); 
-    const name = event.target.name.value;
-    const email = event.target.email.value;
-    const password = event.target.password.value; 
-   /*  const agree = event.target.terms.checked; */
-
-   /*  await/* 
-    
-  /*   await updateProfile({ displayName: name });
-    console.log('Updated profile'); */
-  /*   Navigate('/home'); */
-  createUserWithEmailAndPassword(email, password);
-
-
-
-
-
-
-  const navigate = useNavigate();
-      const emailRef = useRef('');
-    const passwordRef = useRef('');
-    
-     const location = useLocation();
-
-    let from = location.state?.from?.pathname || "/";
-    let errorElement;  
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth);
-
-   /* const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth); */
-
-    /* if (loading || sending) {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
+    if (user) {
+        navigate('/Home');
+    }
+    if(loading ){
         return <Loading></Loading>
-    } */
- 
-    /* if (user) {
-        navigate(from, { replace: true });
-    } */
-
-    /* if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
-    } */
-
-     const handleSubmit = event => {
-        event.preventDefault();
-         const email = emailRef.current.value;
-        const password = passwordRef.current.value; 
-
-        signInWithEmailAndPassword(email, password);
-    } 
-
-     const navigateSignUp = event => {
-        navigate('/SignUp');
-    } 
-
-   /*  const resetPassword = async () => {
-        const email = emailRef.current.value;
-        if (email) {
-            await sendPasswordResetEmail(email);
-            toast('Sent email');
-        } */
-       /*  else{
-            toast('please enter your email address');
-        } */
-
-}
+    }
+   /*  const google="https://imgs.search.brave.com/BhWxPPAj1OqjBLXobFjxUuZedP-bjuaffBY9Gf1g5IY/rs:fit:1000:1000:1/g:ce/aHR0cHM6Ly93d3cu/cG9seW10bC5jYS9j/YWxlbmRyaWVyL3Np/dGVzL2NhbGVuZHJp/ZXIuYW1pZ293MjAy/MC5wb2x5bXRsLmNh/L2ZpbGVzL2dvb2ds/ZWxvZ28uanBn"; */
     return (
         <div>
-            
+            <button
+                    onClick={() =>signInWithGoogle()}
+                    className='btn btn-info w-50 d-block mx-auto my-2'>
+                    <img style={{ width: '30px' }} src={google} alt="" />
+                    <span className='px-2 fw-bolder'>Google Sign In</span>
+                </button>
         </div>
     );
 };

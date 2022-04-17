@@ -43,7 +43,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className='container w-50 mx-auto'>
+            <div style={{marginTop:"100px"}} className='container w-50 mx-auto'>
           {/*   <PageTitle title="Login"></PageTitle> */}
             <h2 className='text-primary text-center mt-2'>Please Login</h2>
             <Form onSubmit={handleUserSignIn}>
@@ -58,7 +58,7 @@ const Login = () => {
              loading && <p>loading...</p>
          }
                 
-                <Button className="btn-success rounded border-0 py-2 w-50 mx-auto d-block mb-2" type="submit">
+                <Button className="btn-info  rounded border-0 py-2 w-50 fw-bolder mx-auto d-block mb-2" type="submit">
                     Login
                 </Button>
             </Form>

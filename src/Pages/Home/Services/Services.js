@@ -16,7 +16,7 @@ const Services = () => {
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button className="btn-success px-3 py-2 border-0 rounded mt-4">Go Checkout</Button>
   </Card.Body>
 </Card>
    </div>   
@@ -29,7 +29,7 @@ const Services = () => {
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button className="btn-success px-3 py-2 border-0 rounded">Go Checkout</Button>
   </Card.Body>
 </Card>
                </div>
@@ -42,7 +42,7 @@ const Services = () => {
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button className="btn-success px-3 py-2 border-0 rounded">Go Checkout</Button>
   </Card.Body>
 </Card>
        </div> 

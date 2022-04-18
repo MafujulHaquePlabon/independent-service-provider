@@ -22,7 +22,7 @@ const Service = ({service}) => {
     <Card.Text> <span className="fw-bolder">Description: </span>
      {description}
     </Card.Text>
-   <Link to="/checkout"> <Button  onClick={() => navigateToServiceDetail(id)} className="btn-success px-3 py-2 border-0 rounded mt-4">Go Checkout</Button></Link>
+   <Link to="/checkout"> <Button  className="btn-success px-3 py-2 border-0 rounded mt-4">Go Checkout</Button></Link>
   </Card.Body>
 </Card>
    </div>

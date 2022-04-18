@@ -3,7 +3,7 @@ import { XIcon } from '@heroicons/react/solid'
 
 const Notfound = () => {
     return (
-        <div>
+        <div className="mt-5">
         <div>
         <h1 className='text-green-700 text-2xl font-semibold flex justify-center'>Page Not Found 
           <span ><XIcon style={{width:'30px'}} className='w-8 text-red-600 '></XIcon></span> </h1>
